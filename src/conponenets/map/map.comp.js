@@ -38,4 +38,15 @@ const Map = () => {
   );
 };
 
+Map.defaultProps = {
+  distanceToMouse: function distanceToMouse(pt, mousePos) {
+    console.log('pt', pt);
+    console.log('mousePos', mousePos);
+    return Math.sqrt(
+      (pt.x - mousePos.x) * (pt.x - mousePos.x) +
+        (pt.y - mousePos.y) * (pt.y - mousePos.y)
+    );
+  }
+};
+
 export default Map;
